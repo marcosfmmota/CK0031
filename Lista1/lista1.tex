@@ -11,7 +11,154 @@
 \begin{document}
 \maketitle
 \section{Questão 1}
+
 \subsection{}
+Falso, pois um agente com apenas informação parcial sobre o estado do mundo pode gerar um função de probabilidade para as ações. Com a nossa definição de racionalidade baseado em maximação de um função de desempenho, podemos dizer que um agente é perfeitamente racional mesmo se ele maximizar uma função probabilística de desempenho e ações.
+
+\subsection{}
+Verdadeiro, pois em ambientes sequenciais um agente reflex iria apenas agir baseado no percept atual mas a caracteristica desses ambientes são, que ações efeitas no presente pode afetar as ações a serem tomadas no futuro. Como agentes reflex não tem essa habildade, nunca poderam selecionar suas ações baseadas na melhora de uma madida de desempenho para esse ambiente.
+
+\subsection{}
+Verdadeiro. Um componente essencial de um task environment é a medida de performace. Logo se atribuirmos uma media de performace que sempre da a pontuação maxima para qualquer ação, qualquer agente vai ser racional.
+
+\subsection{}
+Falso. Um agent program tem como entrada um percept atual do ambiente. Já uma agent function tem como entrada o histórico de percepts.
+
+\subsection{}
+Verdadeiro. Pois podemos enumerar os históricos de percepts e as ações correspondentes em uma tabela, pode ser não eficiente mas sempre pode ser computada.
+
+\subsection{}
+
+Verdadeiro. Por exemplo usando uma medida de performace do item C obtemos esse tipo de resultado.
+
+\subsection{}
+
+Parece Falso.
+
+\subsection{}
+
+\subsection{}
+
+Falso. Por mais que o agente tome sempre as decisões mais racionais possiveis o ambiente não pode ser completamente observável e fatores como blefe não permitem uma modelagem matemática determinística.
+
+\section{Questão 2}
+\subsection{Playing Soccer}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Número de Gols & Campo de Futebol & Pernas & Camera \\
+Defesas & & Mãos & Sensor de distância \\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+partially observable & multi-agent & stochastic & sequential & dynamic & continuous & known
+\end{tabular}
+\end{table}
+
+\subsection{Shop Books}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Descontos & Serviço de Compras Online & HTML parser & Listeners \\
+Número de livros & & efetuar procedimentos & buscador\\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+fully observable & single agent & deterministic & episodic & dynamic & discrete & known
+\end{tabular}
+\end{table}
+
+\subsection{Tennis Match}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Sets Ganhos & Quadra de Tennis & Mãos & Camera \\
+Número de pontos & & Motores & Sensor de distância\\
+Velocida de lançamento & & Raquete & osciloscópio\\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+partially observable & multi-agent & stochastic & sequential & dynamic & continuous & known
+\end{tabular}
+\end{table}
+
+\subsection{Tennis Match Against Wall}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Sets Ganhos & Quadra de Tennis & Mãos & Camera \\
+Número de pontos & & Motores & Sensor de distância\\
+Velocida de lançamento & & Raquete & osciloscópio\\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+fully observable & single-agent & stochastic & sequential & dynamic & continuous & known
+\end{tabular}
+\end{table}
+
+\subsection{High Jump}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Altura & Mundo & Pernas & Camera \\
+ & & Motores & Sensor de distância\\
+ & & Armortecedores & osciloscópio\\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+fully observable & single-agent & stochastic & episodic & dynamic & continuous & known
+\end{tabular}
+\end{table}
+
+\subsection{Biddin at an Auction}
+\subsubsection{PEAS}
+\begin{table}[h!]
+\begin{tabular}{l|l|l|l}
+\hline
+Performace & Environment & Actuators & Sensors \\
+\hline
+Altura & Mundo & Pernas & Camera \\
+ & & Motores & Sensor de distância\\
+ & & Armortecedores & osciloscópio\\
+\end{tabular}
+\end{table}
+\subsubsection{Caracterização}
+\begin{table}[h!]
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+fully observable & single-agent & stochastic & episodic & dynamic & continuous & known
+\end{tabular}
+\end{table}
 
 
 \end{document}

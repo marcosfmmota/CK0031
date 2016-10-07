@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.6)  6 OCT 2016 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.6)  7 OCT 2016 00:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,23 +368,73 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./lista1.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 48.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 48.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 48.
+
+Overfull \hbox (86.31537pt too wide) in paragraph at lines 58--62
+[][] 
+ []
+
+
+Overfull \hbox (45.5766pt too wide) in paragraph at lines 67--74
+[][] 
+ []
+
+[2]
+Overfull \hbox (57.91983pt too wide) in paragraph at lines 77--81
+[][] 
+ []
+
+
+Overfull \hbox (20.54074pt too wide) in paragraph at lines 86--94
+[][] 
+ []
+
+
+Overfull \hbox (86.31537pt too wide) in paragraph at lines 97--101
+[][] 
+ []
+
+
+Overfull \hbox (20.54074pt too wide) in paragraph at lines 106--114
+[][] 
+ []
+
+
+Overfull \hbox (67.45029pt too wide) in paragraph at lines 117--121
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
+Overfull \hbox (57.33234pt too wide) in paragraph at lines 137--141
+[][] 
+ []
+
+[4] (./lista1.aux) ) 
 Here is how much of TeX's memory you used:
- 951 strings out of 493029
- 10285 string characters out of 6136234
- 67544 words of memory out of 5000000
- 4539 multiletter control sequences out of 15000+600000
- 6063 words of font info for 22 fonts, out of 8000000 for 9000
+ 975 strings out of 493029
+ 10532 string characters out of 6136234
+ 73544 words of memory out of 5000000
+ 4557 multiletter control sequences out of 15000+600000
+ 8808 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,6n,23p,189b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on lista1.pdf (1 page, 30098 bytes).
+ 23i,8n,23p,396b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+
+Output written on lista1.pdf (4 pages, 47877 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 29 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
