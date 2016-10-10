@@ -18,12 +18,12 @@ class Droid(Agent):
 
 	
 class amatriceEnvironment(XYEnvironment): ## TAKE A LOOK AT XY AND WUMPUS ENVIRONMENT Line 376 and 678 agents.py
-	rock_probability = 0.2 # Probability to find a rock in a location. (From Chapter 7.2)
-	humans_quantity = 2 # Probability to find a human in a location. (From Chapter 7.2)
-	maxSteps = 30 # calculate the maximium steps (squares) to the agent end
+	rock_probability = 0.33 # Probability to find a rock in a location. (From Chapter 7.2)
+	humans_quantity = 30 # Probability to find a human in a location. (From Chapter 7.2)
+	maxSteps = 1500 # calculate the maximium steps (squares) to the agent end
 	steps = 0;
 	
-	def __init__(self, agent, width=3, height=13): #vector, is gonna be matrix
+	def __init__(self, agent, width=22, height=17): #vector, is gonna be matrix
 		super(amatriceEnvironment, self).__init__(width, height) 
 		self.init_world(agent)
 		
@@ -110,7 +110,7 @@ class amatriceEnvironment(XYEnvironment): ## TAKE A LOOK AT XY AND WUMPUS ENVIRO
 	def execute_action(self, agent, action):
 		self.steps += 1
 		'''Modify the state of the environment based on the agent's actions
-			Performance score taken directly out of the book
+			Performance score taken directly out of the book '''
 
 		if action == 'TurnRight':
 			agent.direction = agent.direction + Direction.R
@@ -118,8 +118,7 @@ class amatriceEnvironment(XYEnvironment): ## TAKE A LOOK AT XY AND WUMPUS ENVIRO
 		elif action == 'TurnLeft':
 			agent.direction = agent.direction + Direction.L
 			agent.performance -= 1
-		elif'''
-		if action == 'Forward':
+		elif action == 'Forward':
 			agent.bump = self.move_to(agent, agent.actualDirection.move_forward(agent.location))
 			agent.performance -= 1
 		elif action == 'Grab':
@@ -155,16 +154,35 @@ def ReflexDroid():
 		'''
 	return Droid(program)
 
-def main():
-	d = ReflexDroid()
-	e = amatriceEnvironment(d)
+class ModelAgent(Droid):
 
-	mundo = e.get_world()
-	for linha in mundo:
-		largura = len(linha)
-		for i in range(0,largura):
-			if len(linha[i]) > 0:
-				x = linha[i][0]
+	def __init__(self):
+		super(ModelAgent,self).__init__()
+		self.history = []	
+	
+	def program(self, percept):
+		history = []		
+		proximityS, humanS, takeOffS = percept  
+		if takeOffS:
+			self.history.insert(0,(self.direction,'TakeOff'))
+			return 'TakeOff'
+		elif isinstance( humanS[0], Human().__class__):
+			self.history.insert(0,(self.direction,'Grab'))
+			return 'Grab'        
+		elif isinstance( proximityS[0], Wall().__class__):
+			self.history.insert(0,(self.direction,'TurnRight'))		
+			return 'TurnRight'
+		else:
+			self.history.insert(0,(self.direction,'Forward'))
+			return 'Forward'		
+
+def show_world(environment):
+	world = environment.get_world()
+	for line in world:
+		length = len(line)
+		for i in range(0,length):
+			if len(line[i]) > 0:
+				x = line[i][0]
 				if x.__class__ == Human:
 					print('H', end="")
 				elif x.__class__ == Rock:
@@ -177,8 +195,18 @@ def main():
 				print(' ', end="")
 		print()
 		
-	
 
+def main():
+	model_agent = ModelAgent()
+	environment = amatriceEnvironment(model_agent)
+	while(True):
+		percept = environment.percept(model_agent)		
+		action = model_agent.program(percept)
+		environment.execute_action(model_agent, action)		
+		show_world(environment)
+		if action == 'TakeOff':
+			break
+		
 if __name__ == '__main__':
 	main()
 

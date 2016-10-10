@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
@@ -25,7 +26,7 @@ Verdadeiro. Um componente essencial de um task environment é a medida de perfor
 Falso. Um agent program tem como entrada um percept atual do ambiente. Já uma agent function tem como entrada o histórico de percepts.
 
 \subsection{}
-Verdadeiro. Pois podemos enumerar os históricos de percepts e as ações correspondentes em uma tabela, pode ser não eficiente mas sempre pode ser computada.
+Falso. Em geral agent functions são infinitas a não ser que haja uma restrição no tamanho da lista de percepts que podem ser usadas. Logo, agent functions são objetos matemáticos que não implicam em implementação.
 
 \subsection{}
 
@@ -33,9 +34,10 @@ Verdadeiro. Por exemplo usando uma medida de performace do item C obtemos esse t
 
 \subsection{}
 
-Parece Falso.
+Verdadeiro, pois se existe um ambiente que todo agente é racional se mudarmos os actuators e sensors do task environment o agente ainda será racional.
 
 \subsection{}
+Falso. Se o ambiente não pode ser percebido a racionalidade do agente vem do conhcimento interno modelado no agente. Se esse modelo for mal feito o agente não tomará ações para maximizar a performace e logo não são racionais.
 
 \subsection{}
 
@@ -147,18 +149,57 @@ fully observable & single-agent & stochastic & episodic & dynamic & continuous &
 \hline
 Performace & Environment & Actuators & Sensors \\
 \hline
-Altura & Mundo & Pernas & Camera \\
- & & Motores & Sensor de distância\\
- & & Armortecedores & osciloscópio\\
+Comprar Objeto & Leilão & Publicar propostas & Listeners \\
+Menor porcentagem de preço & &  & \\
 \end{tabular}
 \end{table}
 \subsubsection{Caracterização}
 \begin{table}[h!]
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-fully observable & single-agent & stochastic & episodic & dynamic & continuous & known
+fully observable & single-agent & stochastic & episodic & static & discrete & known
 \end{tabular}
 \end{table}
 
+\section{Questão 3}
+\subsection{Agent}
+Programa que pode perceber e atuar no ambiente em que ele está inserido.
+\subsection{Agent Function}
+Apartir de todos os percepts decidir qual ação deverá ser executada em terminado percept.
+\subsection{Agent Program}
+Função que apartir do estado atual do ambiente decide qual a ação deve ser tomada.
+\subsection{Rationality}
+Tomar a ação correta no estado atual e pensando em sua consequências futuras aonde a forma de dizer se a ação foi correta é baseada no quão proximo ela te deixou do objetivo.
+\subsection{Autonomy}
+Tomar boas decisões baseadas apenas nas informações presentes no ambiente e informação do agente, ou seja, sem conhecimento pré-determinado ou passado por outro agente.
+\subsection{Reflex Agent}
+Agente que apenas leva em conta soment o percept atual do ambiente e realiza sua ação consultando uma tabela de ações pré-determinada para cada percept.
+\subsection{Model-Based Agent}
+Agente que usa histórico de percepts junto com of efeitos de suas ações no ambiente para escolher a melhor ação no estado atual.
+\subsection{Goal-Based Agent}
+Esse agente além de de usar os percepts passados como os Model-Based escolhe suas ações baseadas em um conjuto de objetivos que devem ser alcaçados, logo não tem objetivos a longo termo.
+\subsection{Utility Agent}
+Esse agente diferente do Goal-Based não possuem a noção de objetivo mas escolhe sua ação de forma a maximizar uma função interna chamada função de utilidade.
+\subsection{Learn Agent}
+Agente que pussui uma forma de critica externa da forma que o agente pode dizer se sua ação foi boa ou não e atualizar seus parametros e possiveis ações para que possa aprender de que forma ele pode melhorar sua performace.
+
+\section{Questão 4}
+
+\subsection{}
+Sim é possivel. Como exemplo podemos ter um ambiente bem simples, como o vaccumn world, onde tanto um reflex-agent como um model-based tomam atitudes ótimas assim toda a sequência de percepts teram ações iguais.
+
+\subsection{}
+Depende do ambiente, em geral agent program que são adaptados para ambientes estocasticos e dinamicos podem variar suas ações para a mesma sequência de percepts.
+
+\subsection{}
+Isso pode mudar a agent function em ambientes dinamicos pois assim mais mudanças no ambiente seram percebidas e o agente pode tomar ações baseadas nessas mudanças e isso pode variar a ação tomada, logo a agent function em si.
+
+\section{Questão 5}
+
+\url{https://github.com/marcosfmmota/CK0031/tree/master/Lista1}
+
+Um reflex agent não conseguiria voltar para a posição inicial pois ele atua simplemente sobre os percepts atuais logo não possui memória sobre o ambiente em que ele esteve anteriormente.
+
+Dessa forma um reflex agent ficaria apenas andando aleatóriamente pelo ambiente e não teria como garantir que todos os humanos do ambiente seria salvos, mas apenas alguns que o agente encontrasse no caminho. O que mais impede o bom desempenho de um reflex agent é a sua falta de memória das ações passadas.
 
 \end{document}
